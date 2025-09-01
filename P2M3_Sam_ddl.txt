@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS fortune_1000 (
+company VARCHAR(255),
+rank INTEGER,
+rank_change FLOAT,
+revenue FLOAT,
+profit FLOAT,
+num_of_employees FLOAT,
+sector VARCHAR(255),
+city VARCHAR(255),
+state VARCHAR(2),
+newcomer VARCHAR(10),
+ceo_founder VARCHAR(10),
+ceo_woman VARCHAR(10),
+profitable VARCHAR(10),
+prev_rank VARCHAR(10),
+ceo VARCHAR(255),
+website VARCHAR(255),
+ticker VARCHAR(10),
+market_cap VARCHAR(255)
+);
+
+/* NOTE: Here we make all the column names are align with the rules*/
+
+/*DML for inserting data*/
+COPY fortune_1000(company, rank, rank_change, revenue, profit, num_of_employees, sector, city, state, newcomer, ceo_founder, ceo_woman, profitable, prev_rank, ceo, website, ticker, market_cap)
+FROM '/mnt/data/Fortune_1000.csv'
+DELIMITER ','
+CSV HEADER;
+
+URL Dataset: https://www.kaggle.com/datasets/winston56/fortune-500-data-2021?resource=download
